@@ -118,7 +118,7 @@ class CardDetailsRequest(TypedDict):
     number: str
     expiryMonth: str
     expiryYear: str
-    cvc: str
+    cvc: NotRequired[str]
     name: NotRequired[str]
 
 
