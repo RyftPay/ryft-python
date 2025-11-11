@@ -6,6 +6,11 @@ from ryft_sdk.clients.customers import CustomersClient
 from ryft_sdk.clients.disputes import DisputesClient
 from ryft_sdk.clients.events import EventsClient
 from ryft_sdk.clients.files import FilesClient
+from ryft_sdk.clients.in_person_locations import InPersonLocationsClient
+from ryft_sdk.clients.in_person_orders import InPersonOrdersClient
+from ryft_sdk.clients.in_person_products import InPersonProductsClient
+from ryft_sdk.clients.in_person_skus import InPersonSkusClient
+from ryft_sdk.clients.in_person_terminals import InPersonTerminalsClient
 from ryft_sdk.clients.payment_methods import PaymentMethodsClient
 from ryft_sdk.clients.payment_sessions import PaymentSessionsClient
 from ryft_sdk.clients.payout_methods import PayoutMethodsClient
@@ -27,6 +32,11 @@ class Ryft:
         self.disputes = DisputesClient(self.client)
         self.events = EventsClient(self.client)
         self.files = FilesClient(self.client)
+        self.in_person_locations = InPersonLocationsClient(self.client)
+        self.in_person_orders = InPersonOrdersClient(self.client)
+        self.in_person_products = InPersonProductsClient(self.client)
+        self.in_person_skus = InPersonSkusClient(self.client)
+        self.in_person_terminals = InPersonTerminalsClient(self.client)
         self.payment_methods = PaymentMethodsClient(self.client)
         self.payment_sessions = PaymentSessionsClient(self.client)
         self.payouts = PayoutsClient(self.client)
