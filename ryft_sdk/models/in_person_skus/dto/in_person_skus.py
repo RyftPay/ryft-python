@@ -1,7 +1,7 @@
 from typing import List, Optional, TypedDict
 
 
-class InPersonProductSku(TypedDict, total=False):
+class InPersonProductSku(TypedDict):
     id: str
     name: str
     country: str
@@ -13,6 +13,6 @@ class InPersonProductSku(TypedDict, total=False):
     lastUpdatedTimestamp: int
 
 
-class InPersonProductSkus(TypedDict, total=False):
+class InPersonProductSkus(TypedDict):
     items: List[InPersonProductSku]
     paginationToken: Optional[str]

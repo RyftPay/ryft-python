@@ -1,7 +1,7 @@
 from typing import Any, List, Optional, TypedDict
 
 
-class InPersonLocation(TypedDict, total=False):
+class InPersonLocation(TypedDict):
     id: str
     name: str
     address: dict[str, Any]
@@ -11,10 +11,10 @@ class InPersonLocation(TypedDict, total=False):
     lastUpdatedTimestamp: int
 
 
-class InPersonLocationDeleted(TypedDict, total=False):
+class InPersonLocationDeleted(TypedDict):
     id: str
 
 
-class InPersonLocations(TypedDict, total=False):
+class InPersonLocations(TypedDict):
     items: List[InPersonLocation]
     paginationToken: Optional[str]

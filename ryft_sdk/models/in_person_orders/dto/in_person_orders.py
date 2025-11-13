@@ -1,7 +1,7 @@
 from typing import Any, List, Optional, TypedDict
 
 
-class InPersonOrder(TypedDict, total=False):
+class InPersonOrder(TypedDict):
     id: str
     status: str
     totalAmount: int
@@ -15,6 +15,6 @@ class InPersonOrder(TypedDict, total=False):
     lastUpdatedTimestamp: int
 
 
-class InPersonOrders(TypedDict, total=False):
+class InPersonOrders(TypedDict):
     items: List[InPersonOrder]
     paginationToken: Optional[str]

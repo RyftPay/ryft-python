@@ -1,20 +1,20 @@
 from typing import Any, Optional, TypedDict
 
 
-class CreateTerminalRequest(TypedDict, total=False):
+class CreateTerminalRequest(TypedDict):
     serialNumber: str
     name: Optional[str]
     locationId: Optional[str]
     metadata: Optional[dict[str, str]]
 
 
-class UpdateTerminalRequest(TypedDict, total=False):
+class UpdateTerminalRequest(TypedDict):
     locationId: Optional[str]
     name: Optional[str]
     metadata: Optional[dict[str, str]]
 
 
-class TerminalPaymentRequest(TypedDict, total=False):
+class TerminalPaymentRequest(TypedDict):
     amounts: dict[str, Any]
     receiptPrintingSource: Optional[str]
     skipCustomerReceipt: Optional[bool]
@@ -22,7 +22,7 @@ class TerminalPaymentRequest(TypedDict, total=False):
     metadata: Optional[dict[str, str]]
 
 
-class TerminalRefundRequest(TypedDict, total=False):
+class TerminalRefundRequest(TypedDict):
     paymentSession: dict[str, str]
     amounts: dict[str, Any]
     receiptPrintingSource: Optional[str]
@@ -31,6 +31,6 @@ class TerminalRefundRequest(TypedDict, total=False):
     metadata: Optional[dict[str, str]]
 
 
-class TerminalConfirmReceiptRequest(TypedDict, total=False):
+class TerminalConfirmReceiptRequest(TypedDict):
     customerReceiptStatus: Optional[str]
     merchantReceiptStatus: Optional[str]
