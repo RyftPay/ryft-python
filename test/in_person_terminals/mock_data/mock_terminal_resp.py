@@ -36,23 +36,22 @@ def mock_update_terminal_req():
 
 def mock_payment_req():
     return {
-        "amounts": {"totalAmount": 1000, "currency": "GBP"},
-        "receiptPrintingSource": "Terminal",
-        "skipCustomerReceipt": False,
-        "skipMerchantReceipt": False,
+        "amounts": {"requested": 1000},
+        "currency": "GBP",
+        "paymentSession": {"platformFee": 50},
     }
 
 
 def mock_refund_req():
     return {
         "paymentSession": {"id": "ps_01FCTS1XMKH9FF43CAFA4CXT3P"},
-        "amounts": {"totalAmount": 1000, "currency": "GBP"},
-        "receiptPrintingSource": "Terminal",
+        "amount": 1000,
+        "refundPlatformFee": False,
     }
 
 
 def mock_confirm_receipt_req():
     return {
-        "customerReceiptStatus": "Success",
-        "merchantReceiptStatus": "Success",
+        "customerCopy": {"status": "Succeeded"},
+        "merchantCopy": {"status": "Succeeded"},
     }
