@@ -1,3 +1,6 @@
+from __future__ import annotations
+
+
 def determine_base_url(secret_key: str) -> str:
     """
     Determine the base URL based on the secret key pattern.

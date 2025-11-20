@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import unittest
 from ryft_sdk.utils import determine_base_url
 

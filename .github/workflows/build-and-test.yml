@@ -8,10 +8,12 @@ on:
 
 jobs:
   build-and-test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     strategy:
       matrix:
         python-version: [
+          '3.7',
+          '3.8',
           '3.9',
           '3.10',
           '3.11',
@@ -35,11 +37,13 @@ jobs:
         python -m pip install --upgrade pip
         pip install .
 
+    - name: Install formatting dependencies
+      run: |
+        pip install black
+
     - name: Check formatting
-      uses: psf/black@stable
-      with:
-        options: "--check --verbose"
-        src: "."
+      run: |
+        black --check --verbose .
 
     - name: Run tests
       run: |

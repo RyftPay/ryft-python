@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from typing_extensions import List, NotRequired, TypedDict
 from ryft_sdk.models.disputes.dto.disputes import (
     DisputeEvidenceFile,

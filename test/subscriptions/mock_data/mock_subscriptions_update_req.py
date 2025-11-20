@@ -1,3 +1,6 @@
+from __future__ import annotations
+
+
 def mock_update_subscription_req():
     return {
         "price": {

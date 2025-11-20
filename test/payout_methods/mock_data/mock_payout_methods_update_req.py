@@ -1,3 +1,6 @@
+from __future__ import annotations
+
+
 def mock_update_payout_method_req():
     return {
         "displayName": "string",

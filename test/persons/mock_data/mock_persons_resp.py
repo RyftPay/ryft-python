@@ -1,3 +1,6 @@
+from __future__ import annotations
+
+
 def mock_person_resp():
     return {
         "id": "per_01G0EYVFR02KBBVE2YWQ8AKMGJ",

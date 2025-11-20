@@ -1,3 +1,6 @@
+from __future__ import annotations
+
+
 def mock_refund_req_partial_refund():
     return {"amount": 250}
 

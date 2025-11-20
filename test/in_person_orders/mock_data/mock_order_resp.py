@@ -1,3 +1,6 @@
+from __future__ import annotations
+
+
 def mock_in_person_order():
     return {
         "id": "ipord_01FCTS1XMKH9FF43CAFA4CXT3P",

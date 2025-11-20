@@ -1,3 +1,6 @@
+from __future__ import annotations
+
+
 def mock_capture_payment_req_with_partial_amount():
     return {"amount": 50}
 

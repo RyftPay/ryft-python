@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from typing_extensions import List, Literal, NotRequired, TypedDict, Union
 from ryft_sdk.models.address import AccountAddress
 

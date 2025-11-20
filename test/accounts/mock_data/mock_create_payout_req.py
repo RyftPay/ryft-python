@@ -1,3 +1,6 @@
+from __future__ import annotations
+
+
 def mock_create_payout_req():
     return {
         "amount": 5000,

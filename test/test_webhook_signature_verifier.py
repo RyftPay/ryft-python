@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import unittest
 from ryft_sdk.webhook_signature_verifier import WebhookSignatureVerifier
 

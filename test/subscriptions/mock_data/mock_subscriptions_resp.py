@@ -1,3 +1,6 @@
+from __future__ import annotations
+
+
 def mock_payment_sessions_resp():
     return {
         "items": [

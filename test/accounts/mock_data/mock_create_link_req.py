@@ -1,3 +1,6 @@
+from __future__ import annotations
+
+
 def mock_create_link_req():
     return {
         "email": "user@example.com",

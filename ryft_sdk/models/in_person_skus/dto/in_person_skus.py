@@ -1,4 +1,7 @@
-from typing import List, Optional, TypedDict
+from __future__ import annotations
+
+from typing import List, Optional
+from typing_extensions import TypedDict
 
 
 class InPersonProductSku(TypedDict):

@@ -1,3 +1,6 @@
+from __future__ import annotations
+
+
 def mock_create_account_request_hosted_onboarding_minimum():
     return {"email": "test@example.com"}
 

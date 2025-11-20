@@ -1,3 +1,6 @@
+from __future__ import annotations
+
+
 def mock_update_payment_method_req():
     return {
         "billingAddress": {

@@ -1,3 +1,6 @@
+from __future__ import annotations
+
+
 def mock_payment_session_resp():
     return {
         "id": "ps_01FCTS1XMKH9FF43CAFA4CXT3P",

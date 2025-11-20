@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from typing_extensions import NotRequired, TypedDict
 
 from ryft_sdk.models.payment_sessions.req.payment_sessions_req import (

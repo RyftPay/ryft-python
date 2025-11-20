@@ -1,3 +1,6 @@
+from __future__ import annotations
+
+
 def mock_add_dispute_evidence_req():
     return {
         "text": {

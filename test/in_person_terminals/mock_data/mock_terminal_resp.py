@@ -1,3 +1,6 @@
+from __future__ import annotations
+
+
 def mock_terminal():
     return {
         "id": "tml_01FCTS1XMKH9FF43CAFA4CXT3P",
