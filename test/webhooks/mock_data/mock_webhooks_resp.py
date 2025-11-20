@@ -1,3 +1,6 @@
+from __future__ import annotations
+
+
 def mock_webhook_created_resp():
     return {
         "secret": "whs_0f6b1b5a-aef0-4011-978b-19fd4a4d46ea",

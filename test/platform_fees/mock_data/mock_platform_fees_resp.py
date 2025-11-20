@@ -1,3 +1,6 @@
+from __future__ import annotations
+
+
 def mock_platform_fee_resp():
     return {
         "id": "pf_01FCTS1XMKH9FF43CAFA4CXT3P",

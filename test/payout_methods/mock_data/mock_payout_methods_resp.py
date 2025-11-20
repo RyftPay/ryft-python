@@ -1,3 +1,6 @@
+from __future__ import annotations
+
+
 def mock_payout_method_resp():
     return {
         "id": "pm_01G0EYVFR02KBBVE2YWQ8AKMGJ",

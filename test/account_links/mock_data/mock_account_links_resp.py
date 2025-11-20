@@ -1,3 +1,6 @@
+from __future__ import annotations
+
+
 def mock_account_links_resp():
     return {
         "url": "http://tmp-acc-lnk.com",

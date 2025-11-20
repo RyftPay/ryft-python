@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from ryft_sdk.client import RyftClient
 from ryft_sdk.clients.accounts import AccountsClient
 from ryft_sdk.clients.account_links import AccountLinksClient

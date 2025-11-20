@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from typing import Optional, cast
 from ryft_sdk.client import RyftClient
 from ryft_sdk.models.payment_sessions.dto.payment_sessions import (

@@ -1,3 +1,6 @@
+from __future__ import annotations
+
+
 def mock_apple_pay_domain_resp():
     return {
         "id": "ap_123",

@@ -1,3 +1,6 @@
+from __future__ import annotations
+
+
 def mock_in_person_product():
     return {
         "id": "ippd_01FCTS1XMKH9FF43CAFA4CXT3P",

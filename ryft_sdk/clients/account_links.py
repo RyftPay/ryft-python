@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from typing import cast
 from ryft_sdk.client import RyftClient
 from ryft_sdk.models.account_links.dto.account_links import TemporaryAccountLink

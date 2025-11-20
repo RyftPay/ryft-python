@@ -1,3 +1,6 @@
+from __future__ import annotations
+
+
 def mock_update_persons_req():
     return {
         "firstName": "Fred",

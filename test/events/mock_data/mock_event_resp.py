@@ -1,3 +1,6 @@
+from __future__ import annotations
+
+
 def mock_event_resp():
     return {
         "id": "evt_123",

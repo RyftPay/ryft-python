@@ -1,3 +1,6 @@
+from __future__ import annotations
+
+
 def mock_create_subscription_req():
     return {
         "customer": {"id": "cus_01G0EYVFR02KBBVE2YWQ8AKMGJ"},

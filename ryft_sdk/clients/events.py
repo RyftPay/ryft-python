@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from typing import cast, Optional
 from ryft_sdk.client import RyftClient
 from ryft_sdk.models.events.dto.events import Event, Events

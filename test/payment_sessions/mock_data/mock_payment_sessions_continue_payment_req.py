@@ -1,3 +1,6 @@
+from __future__ import annotations
+
+
 def mock_continue_payment_req_submit_3ds_fingerprint_result():
     return {
         "clientSecret": "ps_01FCTS1XMKH9FF43CAFA4CXT3P_secret_b83f2653-06d7-44a9-a548-5825e8186004",

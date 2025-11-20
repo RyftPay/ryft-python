@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from ryft_sdk.models.errors import RyftError
 
 

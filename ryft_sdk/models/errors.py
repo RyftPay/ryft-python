@@ -1,3 +1,6 @@
+from __future__ import annotations
+
+
 class RyftError(Exception):
     def __init__(self, status, response):
         self.requestId = response.get("requestId")

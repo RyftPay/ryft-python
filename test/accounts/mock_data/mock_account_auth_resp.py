@@ -1,3 +1,6 @@
+from __future__ import annotations
+
+
 def mock_account_auth_resp():
     return {
         "createdTimestamp": 1631696701,

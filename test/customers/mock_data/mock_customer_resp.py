@@ -1,3 +1,6 @@
+from __future__ import annotations
+
+
 def mock_customer_resp():
     return {
         "email": "example@example.com",
