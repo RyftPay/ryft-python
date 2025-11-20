@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.3.0
+
+This release includes the following:
+ - Backwards compatibility with Python 3.7 and 3.8
+
 ## 1.2.0
 
 This release includes the following:
