@@ -85,7 +85,7 @@ class CreatePaymentSessionRequest(TypedDict):
     currency: str
     customerEmail: NotRequired[str]
     customerDetails: NotRequired[CustomerDetailsRequest]
-    platformFeee: NotRequired[int]
+    platformFee: NotRequired[int]
     splits: NotRequired[SplitPaymentsRequest]
     captureFlow: NotRequired[str]
     paymentType: str
