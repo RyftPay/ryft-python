@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.3.1
+
+This release includes the following:
+ - Fixes an issue whereby the API key detection was selecting the wrong environment
+
 ## 1.3.0
 
 This release includes the following:
