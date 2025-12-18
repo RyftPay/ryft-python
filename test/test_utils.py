@@ -14,8 +14,8 @@ class TestUtils(unittest.TestCase):
         self.assertEqual(url, "https://sandbox-api.ryftpay.com/v1")
 
     def test_determine_base_url_with_other_key(self):
-        url = determine_base_url("some_other_key")
-        self.assertEqual(url, "https://sandbox-api.ryftpay.com/v1")
+        with self.assertRaises(ValueError):
+            determine_base_url("some_other_key")
 
 
 if __name__ == "__main__":

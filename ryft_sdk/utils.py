@@ -11,7 +11,9 @@ def determine_base_url(secret_key: str) -> str:
     Returns:
         The appropriate base URL for the API
     """
-    if secret_key.startswith("sk_live_"):
+    if secret_key.startswith("sk_sandbox"):
+        return "https://sandbox-api.ryftpay.com/v1"
+    elif secret_key.startswith("sk_"):
         return "https://api.ryftpay.com/v1"
     else:
-        return "https://sandbox-api.ryftpay.com/v1"
+        raise ValueError("Invalid secret key: expected prefix 'sk_'")
