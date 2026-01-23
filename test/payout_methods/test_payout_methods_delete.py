@@ -8,7 +8,6 @@ from ryft_sdk.models.errors import RyftError
 from test.mock_deleted_resource_resp import mock_deleted_resource_resp
 from test.mock_error import mock_ryft_error
 
-
 mock_account_id = "acc_123"
 mock_payout_method_id = "pmt_123"
 
