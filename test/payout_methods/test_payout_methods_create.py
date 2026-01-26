@@ -19,7 +19,6 @@ from test.payout_methods.mock_data.mock_payout_methods_resp import (
     mock_payout_method_resp,
 )
 
-
 mock_account_id = "acc_123"
 
 

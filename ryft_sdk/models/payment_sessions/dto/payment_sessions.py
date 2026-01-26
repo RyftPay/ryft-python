@@ -37,9 +37,17 @@ class PaymentSessionTokenizedDetails(TypedDict):
     stored: bool
 
 
+class BinDetails(TypedDict):
+    issuer: NotRequired[str]
+    issuerCountry: NotRequired[str]
+    fundingType: NotRequired[str]
+    productType: NotRequired[str]
+
+
 class PaymentSessionCard(TypedDict):
     scheme: str
     last4: str
+    binDetails: NotRequired[BinDetails]
 
 
 class PaymentSessionWallet(TypedDict):

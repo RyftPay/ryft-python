@@ -33,7 +33,16 @@ def mock_payment_session_resp():
                 "id": "pmt_01G0EYVFR02KBBVE2YWQ8AKMGJ",
                 "stored": True,
             },
-            "card": {"scheme": "Mastercard", "last4": "4242"},
+            "card": {
+                "scheme": "Mastercard",
+                "last4": "4242",
+                "binDetails": {
+                    "issuer": "MASTERCARD",
+                    "issuerCountry": "GB",
+                    "fundingType": "Credit",
+                    "productType": "Consumer",
+                },
+            },
             "wallet": {"type": "GooglePay"},
             "billingAddress": {
                 "firstName": "string",
