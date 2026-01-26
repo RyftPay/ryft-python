@@ -1,5 +1,11 @@
 # Changelog
 
+
+## 1.4.0
+
+This release includes the following:
+ - The PaymentSession response now includes Card BIN data where applicable
+
 ## 1.3.1
 
 This release includes the following:
