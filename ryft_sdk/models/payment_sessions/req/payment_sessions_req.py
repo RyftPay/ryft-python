@@ -78,8 +78,13 @@ class Ts2Py_gdB5O4Lcvi(TypedDict):
     disabled: List[str]
 
 
+class ThreeDsSettingsRequest(TypedDict):
+    challengeIndicator: str
+
+
 class PaymentSettingsRequest(TypedDict):
-    paymentMethodOptions: Ts2Py_gdB5O4Lcvi
+    paymentMethodOptions: NotRequired[Ts2Py_gdB5O4Lcvi]
+    threeDs: NotRequired[ThreeDsSettingsRequest]
 
 
 class CreatePaymentSessionRequest(TypedDict):
