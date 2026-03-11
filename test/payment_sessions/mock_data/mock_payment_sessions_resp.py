@@ -91,7 +91,8 @@ def mock_payment_session_resp():
                 "postalCode": "SP4 7DE",
                 "city": "Salisbury",
                 "country": "GB",
-            }
+            },
+            "phoneNumber": "+447900000000",
         },
         "orderDetails": {
             "items": [
