@@ -127,8 +127,13 @@ class PaymentMethodOptions(TypedDict):
     disabled: List[str]
 
 
+class ThreeDsSettings(TypedDict):
+    challengeIndicator: str
+
+
 class PaymentSettings(TypedDict):
-    paymentMethodOptions: PaymentMethodOptions
+    paymentMethodOptions: NotRequired[PaymentMethodOptions]
+    threeDs: NotRequired[ThreeDsSettings]
 
 
 class PaymentSession(TypedDict):

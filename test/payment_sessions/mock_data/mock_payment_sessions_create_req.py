@@ -73,5 +73,8 @@ def mock_create_payment_session_req():
         "attemptPayment": {
             "paymentMethod": {"id": "pmt_01G0EYVFR02KBBVE2YWQ8AKMGJ", "cvc": "100"}
         },
-        "paymentSettings": {"paymentMethodOptions": {"disabled": ["Amex"]}},
+        "paymentSettings": {
+            "paymentMethodOptions": {"disabled": ["Amex"]},
+            "threeDs": {"challengeIndicator": "NoPreference"},
+        },
     }
