@@ -10,6 +10,8 @@ from ryft_sdk.models.conversions.req.conversions_req import GetRateRequest
 from test.mock_error import mock_ryft_error
 from test.conversions.mock_data.mock_conversions_resp import mock_conversion_rate_resp
 
+mock_account_id = "acc_123"
+
 
 @pytest.fixture
 def mock_ryft_client():
@@ -28,8 +30,10 @@ async def test_conversions_get_rate(conversions_client, mock_ryft_client):
         GetRateRequest,
         {"buyCurrency": "EUR", "sellCurrency": "GBP", "amount": 1000},
     )
-    resp = await conversions_client.get_rate(req)
-    mock_ryft_client.get.assert_called_once_with("conversions/rate", req)
+    resp = await conversions_client.get_rate(req, account=mock_account_id)
+    mock_ryft_client.get.assert_called_once_with(
+        "conversions/rate", req, account=mock_account_id
+    )
     assert resp == mock_conversion_rate_resp()
 
 
@@ -41,4 +45,4 @@ async def test_conversions_get_rate_error(conversions_client, mock_ryft_client):
         {"buyCurrency": "EUR", "sellCurrency": "GBP", "amount": 1000},
     )
     with pytest.raises(RyftError):
-        await conversions_client.get_rate(req)
+        await conversions_client.get_rate(req, account=mock_account_id)

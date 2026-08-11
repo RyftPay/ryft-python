@@ -14,6 +14,8 @@ from test.conversions.mock_data.mock_conversions_create_req import (
 )
 from test.conversions.mock_data.mock_conversions_resp import mock_conversion_resp
 
+mock_account_id = "acc_123"
+
 
 @pytest.fixture
 def mock_ryft_client():
@@ -29,8 +31,10 @@ def conversions_client(mock_ryft_client):
 async def test_conversions_create(conversions_client, mock_ryft_client):
     mock_ryft_client.post.return_value = mock_conversion_resp()
     req = cast(CreateConversionRequest, mock_create_conversion_req())
-    resp = await conversions_client.create(req)
-    mock_ryft_client.post.assert_called_once_with("conversions", req)
+    resp = await conversions_client.create(req, account=mock_account_id)
+    mock_ryft_client.post.assert_called_once_with(
+        "conversions", req, account=mock_account_id
+    )
     assert resp == mock_conversion_resp()
 
 
