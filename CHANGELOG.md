@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.6.0
+
+This release includes the following:
+ - Adds support for the Conversions API via `ryft.conversions` - create, get, list, and get_rate
+
 ## 1.5.0
 
 This release includes the following:
