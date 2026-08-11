@@ -2,7 +2,11 @@ from __future__ import annotations
 
 from typing import cast, Optional
 from ryft_sdk.client import RyftClient
-from ryft_sdk.models.conversions.dto.conversions import Conversion, Conversions, ConversionRate
+from ryft_sdk.models.conversions.dto.conversions import (
+    Conversion,
+    Conversions,
+    ConversionRate,
+)
 from ryft_sdk.models.conversions.req.conversions_req import (
     CreateConversionRequest,
     GetRateRequest,

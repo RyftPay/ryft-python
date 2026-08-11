@@ -30,7 +30,9 @@ async def test_conversions_list_with_defaults(conversions_client, mock_ryft_clie
 
 
 @pytest.mark.asyncio
-async def test_conversions_list_with_custom_params(conversions_client, mock_ryft_client):
+async def test_conversions_list_with_custom_params(
+    conversions_client, mock_ryft_client
+):
     mock_ryft_client.get.return_value = mock_conversions_resp()
     req = cast(
         ListConversionsRequest,
