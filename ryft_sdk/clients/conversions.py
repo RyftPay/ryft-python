@@ -28,11 +28,13 @@ class ConversionsClient:
     async def list(self, req: Optional[ListConversionsRequest] = None) -> Conversions:
         return cast(
             Conversions,
-            self.client.get(self.path, cast(dict, req) if req else None),
+            self.client.get(self.path, cast(dict, req) if req is not None else None),
         )
 
     async def get_rate(self, req: Optional[GetRateRequest] = None) -> ConversionRate:
         return cast(
             ConversionRate,
-            self.client.get(f"{self.path}/rate", cast(dict, req) if req else None),
+            self.client.get(
+                f"{self.path}/rate", cast(dict, req) if req is not None else None
+            ),
         )
