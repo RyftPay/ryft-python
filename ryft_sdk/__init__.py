@@ -22,6 +22,7 @@ from ryft_sdk.clients.platform_fees import PlatformFeesClient
 from ryft_sdk.clients.subscriptions import SubscriptionsClient
 from ryft_sdk.clients.transfers import TransfersClient
 from ryft_sdk.clients.webhooks import WebhooksClient
+from ryft_sdk.clients.conversions import ConversionsClient
 
 
 class Ryft:
@@ -48,3 +49,4 @@ class Ryft:
         self.subscriptions = SubscriptionsClient(self.client)
         self.transfers = TransfersClient(self.client)
         self.webhooks = WebhooksClient(self.client)
+        self.conversions = ConversionsClient(self.client)
