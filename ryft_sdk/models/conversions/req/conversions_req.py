@@ -20,9 +20,9 @@ class CreateConversionRequest(TypedDict):
 
 
 class GetRateRequest(TypedDict):
-    buyCurrency: NotRequired[str]
-    sellCurrency: NotRequired[str]
-    amount: NotRequired[int]
+    buyCurrency: str
+    sellCurrency: str
+    amount: int
 
 
 class ListConversionsRequest(TypedDict):
