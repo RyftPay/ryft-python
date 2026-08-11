@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       dry_run:
-        description: Build and package but skip publishing to PyPI
+        description: 'Dry run: Build and package but skip publishing to PyPI'
         type: boolean
         default: false
   release:
