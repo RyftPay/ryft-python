@@ -22,17 +22,7 @@ def conversions_client(mock_ryft_client):
 
 
 @pytest.mark.asyncio
-async def test_conversions_get_rate_with_defaults(conversions_client, mock_ryft_client):
-    mock_ryft_client.get.return_value = mock_conversion_rate_resp()
-    resp = await conversions_client.get_rate()
-    mock_ryft_client.get.assert_called_once_with("conversions/rate", None)
-    assert resp == mock_conversion_rate_resp()
-
-
-@pytest.mark.asyncio
-async def test_conversions_get_rate_with_custom_params(
-    conversions_client, mock_ryft_client
-):
+async def test_conversions_get_rate(conversions_client, mock_ryft_client):
     mock_ryft_client.get.return_value = mock_conversion_rate_resp()
     req = cast(
         GetRateRequest,
@@ -46,5 +36,9 @@ async def test_conversions_get_rate_with_custom_params(
 @pytest.mark.asyncio
 async def test_conversions_get_rate_error(conversions_client, mock_ryft_client):
     mock_ryft_client.get.side_effect = mock_ryft_error()
+    req = cast(
+        GetRateRequest,
+        {"buyCurrency": "EUR", "sellCurrency": "GBP", "amount": 1000},
+    )
     with pytest.raises(RyftError):
-        await conversions_client.get_rate()
+        await conversions_client.get_rate(req)
