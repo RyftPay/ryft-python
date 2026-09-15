@@ -15,7 +15,10 @@ class PlatformFeesClient:
         self.path = "platform-fees"
 
     async def list(
-        self, ascending: Optional[bool] = None, limit: Optional[int] = None
+        self,
+        ascending: Optional[bool] = None,
+        limit: Optional[int] = None,
+        startsAfter: Optional[str] = None,
     ) -> PlatformFees:
         return cast(
             PlatformFees,
@@ -24,6 +27,7 @@ class PlatformFeesClient:
                 {
                     "ascending": ascending,
                     "limit": limit,
+                    "startsAfter": startsAfter,
                 },
             ),
         )
@@ -31,5 +35,21 @@ class PlatformFeesClient:
     async def get(self, id: str) -> PlatformFee:
         return cast(PlatformFee, self.client.get(f"{self.path}/{id}"))
 
-    async def get_refunds(self, id: str) -> PlatformFeeRefunds:
-        return cast(PlatformFeeRefunds, self.client.get(f"{self.path}/{id}/refunds"))
+    async def get_refunds(
+        self,
+        id: str,
+        ascending: Optional[bool] = None,
+        limit: Optional[int] = None,
+        startsAfter: Optional[str] = None,
+    ) -> PlatformFeeRefunds:
+        return cast(
+            PlatformFeeRefunds,
+            self.client.get(
+                f"{self.path}/{id}/refunds",
+                {
+                    "ascending": ascending,
+                    "limit": limit,
+                    "startsAfter": startsAfter,
+                },
+            ),
+        )

@@ -16,6 +16,7 @@ class PlatformFee(TypedDict):
 
 class PlatformFees(TypedDict):
     items: List[PlatformFee]
+    paginationToken: NotRequired[str]
 
 
 class PlatformFeeRefund(TypedDict):
@@ -31,3 +32,4 @@ class PlatformFeeRefund(TypedDict):
 
 class PlatformFeeRefunds(TypedDict):
     items: List[PlatformFeeRefund]
+    paginationToken: NotRequired[str]

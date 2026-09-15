@@ -26,7 +26,7 @@ async def test_platform_fees_list_with_default_params(
     mock_ryft_client.get.return_value = mock_platform_fees_resp()
     resp = await platform_fees_client.list()
     mock_ryft_client.get.assert_called_once_with(
-        "platform-fees", {"ascending": None, "limit": None}
+        "platform-fees", {"ascending": None, "limit": None, "startsAfter": None}
     )
     assert resp == mock_platform_fees_resp()
 
@@ -36,9 +36,11 @@ async def test_platform_fees_list_with_custom_params(
     platform_fees_client, mock_ryft_client
 ):
     mock_ryft_client.get.return_value = mock_platform_fees_resp()
-    resp = await platform_fees_client.list(ascending=True, limit=10)
+    resp = await platform_fees_client.list(
+        ascending=True, limit=10, startsAfter="pf_01FCTS1XMKH9FF43CAFA4CXT3P"
+    )
     mock_ryft_client.get.assert_called_once_with(
-        "platform-fees", {"ascending": True, "limit": 10}
+        "platform-fees", {"ascending": True, "limit": 10, "startsAfter": "pf_01FCTS1XMKH9FF43CAFA4CXT3P"}
     )
     assert resp == mock_platform_fees_resp()
 
