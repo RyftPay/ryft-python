@@ -40,7 +40,12 @@ async def test_platform_fees_list_with_custom_params(
         ascending=True, limit=10, startsAfter="pf_01FCTS1XMKH9FF43CAFA4CXT3P"
     )
     mock_ryft_client.get.assert_called_once_with(
-        "platform-fees", {"ascending": True, "limit": 10, "startsAfter": "pf_01FCTS1XMKH9FF43CAFA4CXT3P"}
+        "platform-fees",
+        {
+            "ascending": True,
+            "limit": 10,
+            "startsAfter": "pf_01FCTS1XMKH9FF43CAFA4CXT3P",
+        },
     )
     assert resp == mock_platform_fees_resp()
 

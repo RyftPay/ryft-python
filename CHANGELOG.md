@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.7.0
+
+This release includes the following:
+ - Adds `startsAfter` to `platform_fees.list`, for paging platform fees
+ - Adds `ascending`, `limit` and `startsAfter` to `platform_fees.get_refunds`
+ - Adds `paginationToken` to the `PlatformFees` and `PlatformFeeRefunds` models
+
 ## 1.6.0
 
 This release includes the following:

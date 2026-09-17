@@ -40,11 +40,18 @@ async def test_platform_fees_get_refunds_with_custom_params(
 ):
     mock_ryft_client.get.return_value = mock_platform_fees_refund_resp()
     resp = await platform_fees_client.get_refunds(
-        mock_platform_fee_id, ascending=False, limit=10, startsAfter="fr_01FM9XMMV1MYDG6NGMHPDE065N_01FM9XNFXDYXAT0BJN5BBN794B"
+        mock_platform_fee_id,
+        ascending=False,
+        limit=10,
+        startsAfter="fr_01FM9XMMV1MYDG6NGMHPDE065N_01FM9XNFXDYXAT0BJN5BBN794B",
     )
     mock_ryft_client.get.assert_called_once_with(
         f"platform-fees/{mock_platform_fee_id}/refunds",
-        {"ascending": False, "limit": 10, "startsAfter": "fr_01FM9XMMV1MYDG6NGMHPDE065N_01FM9XNFXDYXAT0BJN5BBN794B"},
+        {
+            "ascending": False,
+            "limit": 10,
+            "startsAfter": "fr_01FM9XMMV1MYDG6NGMHPDE065N_01FM9XNFXDYXAT0BJN5BBN794B",
+        },
     )
     assert resp == mock_platform_fees_refund_resp()
 
