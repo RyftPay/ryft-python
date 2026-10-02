@@ -102,7 +102,7 @@ def mock_payment_sessions_txs_resp():
         },
         "paymentSettings": {
             "paymentMethodOptions": {"disabled": ["Amex"]},
-            "threeDs": {"challengeIndicator": "NoPreference"},
+            "threeDs": {"challengeIndicator": "NoPreference", "policy": "Required"},
         },
         "createdTimestamp": 1470989538,
         "lastUpdatedTimestamp": 1470989538,

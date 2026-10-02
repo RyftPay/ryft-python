@@ -79,7 +79,8 @@ class Ts2Py_gdB5O4Lcvi(TypedDict):
 
 
 class ThreeDsSettingsRequest(TypedDict):
-    challengeIndicator: str
+    challengeIndicator: NotRequired[str]
+    policy: NotRequired[str]
 
 
 class PaymentSettingsRequest(TypedDict):
