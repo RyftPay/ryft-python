@@ -49,6 +49,6 @@ def mock_update_payment_session_req():
         },
         "paymentSettings": {
             "paymentMethodOptions": {"disabled": ["Amex"]},
-            "threeDs": {"challengeIndicator": "NoPreference"},
+            "threeDs": {"challengeIndicator": "NoPreference", "policy": "Required"},
         },
     }

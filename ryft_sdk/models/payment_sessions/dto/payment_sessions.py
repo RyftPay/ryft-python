@@ -128,7 +128,8 @@ class PaymentMethodOptions(TypedDict):
 
 
 class ThreeDsSettings(TypedDict):
-    challengeIndicator: str
+    challengeIndicator: NotRequired[str]
+    policy: NotRequired[str]
 
 
 class PaymentSettings(TypedDict):
