@@ -1,10 +1,15 @@
 # Changelog
 
-## 1.8.0
+## 1.9.0
 
 This release includes the following:
  - Adds `verification` to `PayoutMethod`, exposing the payee verification status, `nameOnAccount`, and `rejectionReason`
  - Adds missing `status` and `invalidReason` fields to `PayoutMethod`
+
+## 1.8.0
+
+This release includes the following:
+ - Adds `policy` to `ThreeDsSettingsRequest` and `ThreeDsSettings`, for the payment session `paymentSettings.threeDs.policy` field
 
 ## 1.7.0
 
