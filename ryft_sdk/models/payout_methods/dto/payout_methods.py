@@ -12,15 +12,24 @@ class BankAccount(TypedDict):
     address: NotRequired[Address]
 
 
+class PayoutMethodVerification(TypedDict):
+    status: str
+    nameOnAccount: NotRequired[str]
+    rejectionReason: NotRequired[str]
+
+
 class PayoutMethod(TypedDict):
     id: str
     type: str
     displayName: NotRequired[str]
+    status: str
+    invalidReason: NotRequired[str]
     currency: str
     countryCode: str
     bankAccount: BankAccount
     createdTimestamp: int
     lastUpdatedTimestamp: int
+    verification: PayoutMethodVerification
 
 
 class PayoutMethods(TypedDict):
