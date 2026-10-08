@@ -74,6 +74,15 @@ class CreatePaymentSessionAttemptPaymentRequest(TypedDict):
     paymentMethod: PaymentMethodRequest
 
 
+class AuthenticationParametersRequest(TypedDict):
+    eci: str
+    authenticationValue: NotRequired[str]
+    protocolVersion: NotRequired[str]
+    threeDsServerTransactionId: NotRequired[str]
+    acsTransactionId: NotRequired[str]
+    dsTransactionId: NotRequired[str]
+
+
 class Ts2Py_gdB5O4Lcvi(TypedDict):
     disabled: List[str]
 
@@ -107,6 +116,7 @@ class CreatePaymentSessionRequest(TypedDict):
     metadata: NotRequired[dict[str, str]]
     returnUrl: NotRequired[str]
     attemptPayment: NotRequired[CreatePaymentSessionAttemptPaymentRequest]
+    authenticationParameters: NotRequired[AuthenticationParametersRequest]
     paymentSettings: NotRequired[PaymentSettingsRequest]
 
 
