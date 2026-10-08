@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.10.0
+
+This release includes the following:
+ - Adds `AuthenticationParametersRequest` and `authenticationParameters` to `CreatePaymentSessionRequest`, for sending the result of 3DS performed with your own 3DS server (MPI) alongside `attemptPayment`
+
 ## 1.9.0
 
 This release includes the following:
