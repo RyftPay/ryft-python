@@ -86,3 +86,25 @@ def mock_create_payment_session_req():
             "threeDs": {"challengeIndicator": "NoPreference", "policy": "Required"},
         },
     }
+
+
+def mock_create_payment_session_req_with_wallet_network_token():
+    return {
+        "amount": 500,
+        "currency": "GBP",
+        "customerEmail": "example@mail.com",
+        "paymentType": "Standard",
+        "entryMode": "Online",
+        "attemptPayment": {
+            "walletNetworkToken": {
+                "number": "4444333322221111",
+                "expiryMonth": "10",
+                "expiryYear": "2024",
+                "name": "Fox Mulder",
+                "walletType": "GooglePay",
+            }
+        },
+        "authenticationParameters": {
+            "authenticationValue": "AAABBEg0VhI0VniQEjRWAAAAAAA=",
+        },
+    }
