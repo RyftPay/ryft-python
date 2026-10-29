@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing_extensions import List, NotRequired, TypedDict
+from typing_extensions import List, Literal, NotRequired, TypedDict, Union
 
 from ryft_sdk.models.address import Address
 from ryft_sdk.models.shipping_details import ShippingDetails
@@ -70,8 +70,26 @@ class PaymentMethodRequest(TypedDict):
     cvc: NotRequired[str]
 
 
+class WalletNetworkTokenRequest(TypedDict):
+    number: str
+    expiryMonth: str
+    expiryYear: str
+    name: NotRequired[str]
+    walletType: Union[Literal["ApplePay"], Literal["GooglePay"]]
+
+
 class CreatePaymentSessionAttemptPaymentRequest(TypedDict):
-    paymentMethod: PaymentMethodRequest
+    paymentMethod: NotRequired[PaymentMethodRequest]
+    walletNetworkToken: NotRequired[WalletNetworkTokenRequest]
+
+
+class AuthenticationParametersRequest(TypedDict):
+    eci: NotRequired[str]
+    authenticationValue: NotRequired[str]
+    protocolVersion: NotRequired[str]
+    threeDsServerTransactionId: NotRequired[str]
+    acsTransactionId: NotRequired[str]
+    dsTransactionId: NotRequired[str]
 
 
 class Ts2Py_gdB5O4Lcvi(TypedDict):
@@ -107,6 +125,7 @@ class CreatePaymentSessionRequest(TypedDict):
     metadata: NotRequired[dict[str, str]]
     returnUrl: NotRequired[str]
     attemptPayment: NotRequired[CreatePaymentSessionAttemptPaymentRequest]
+    authenticationParameters: NotRequired[AuthenticationParametersRequest]
     paymentSettings: NotRequired[PaymentSettingsRequest]
 
 
@@ -161,11 +180,13 @@ class AttemptPaymentSessionRequest(TypedDict):
     paymentMethodType: NotRequired[str]
     cardDetails: NotRequired[CardDetailsRequest]
     walletDetails: NotRequired[WalletDetailsRequest]
+    walletNetworkToken: NotRequired[WalletNetworkTokenRequest]
     paymentMethod: NotRequired[PaymentMethodRequest]
     paymentMethodOptions: NotRequired[PaymentMethodOptionsRequest]
     billingAddress: NotRequired[Address]
     customerDetails: NotRequired[CustomerDetailsRequest]
     threeDsRequestDetails: NotRequired[ThreeDsRequestDetails]
+    authenticationParameters: NotRequired[AuthenticationParametersRequest]
 
 
 class ThreeDsRequest(TypedDict):

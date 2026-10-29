@@ -14,12 +14,15 @@ from test.mock_error import mock_ryft_error
 from test.payment_sessions.mock_data.mock_payment_sessions_attempt_payment_req import (
     mock_attempt_payment_req_with_3ds,
     mock_attempt_payment_req_with_apple_pay_token,
+    mock_attempt_payment_req_with_authentication_parameters,
     mock_attempt_payment_req_with_billing_address_included,
     mock_attempt_payment_req_with_card,
     mock_attempt_payment_req_with_card_and_save,
     mock_attempt_payment_req_with_customer_included,
     mock_attempt_payment_req_with_google_pay_token,
     mock_attempt_payment_req_with_saved_payment_method,
+    mock_attempt_payment_req_with_wallet_network_token,
+    mock_attempt_payment_req_with_wallet_network_token_without_eci,
 )
 from test.payment_sessions.mock_data.mock_payment_sessions_txs_resp import (
     mock_payment_sessions_txs_resp,
@@ -149,6 +152,54 @@ async def test_payment_sessions_attempt_with_3ds(
 ):
     mock_ryft_client.post.return_value = mock_payment_sessions_txs_resp()
     req = cast(AttemptPaymentSessionRequest, mock_attempt_payment_req_with_3ds())
+    resp = await payment_sessions_client.attempt_payment(req, account=mock_account_id)
+    mock_ryft_client.post.assert_called_once_with(
+        f"payment-sessions/attempt-payment", req, account=mock_account_id
+    )
+    assert resp == mock_payment_sessions_txs_resp()
+
+
+@pytest.mark.asyncio
+async def test_payment_sessions_attempt_with_authentication_parameters(
+    payment_sessions_client, mock_ryft_client
+):
+    mock_ryft_client.post.return_value = mock_payment_sessions_txs_resp()
+    req = cast(
+        AttemptPaymentSessionRequest,
+        mock_attempt_payment_req_with_authentication_parameters(),
+    )
+    resp = await payment_sessions_client.attempt_payment(req, account=mock_account_id)
+    mock_ryft_client.post.assert_called_once_with(
+        f"payment-sessions/attempt-payment", req, account=mock_account_id
+    )
+    assert resp == mock_payment_sessions_txs_resp()
+
+
+@pytest.mark.asyncio
+async def test_payment_sessions_attempt_with_wallet_network_token(
+    payment_sessions_client, mock_ryft_client
+):
+    mock_ryft_client.post.return_value = mock_payment_sessions_txs_resp()
+    req = cast(
+        AttemptPaymentSessionRequest,
+        mock_attempt_payment_req_with_wallet_network_token(),
+    )
+    resp = await payment_sessions_client.attempt_payment(req, account=mock_account_id)
+    mock_ryft_client.post.assert_called_once_with(
+        f"payment-sessions/attempt-payment", req, account=mock_account_id
+    )
+    assert resp == mock_payment_sessions_txs_resp()
+
+
+@pytest.mark.asyncio
+async def test_payment_sessions_attempt_with_wallet_network_token_without_eci(
+    payment_sessions_client, mock_ryft_client
+):
+    mock_ryft_client.post.return_value = mock_payment_sessions_txs_resp()
+    req = cast(
+        AttemptPaymentSessionRequest,
+        mock_attempt_payment_req_with_wallet_network_token_without_eci(),
+    )
     resp = await payment_sessions_client.attempt_payment(req, account=mock_account_id)
     mock_ryft_client.post.assert_called_once_with(
         f"payment-sessions/attempt-payment", req, account=mock_account_id
