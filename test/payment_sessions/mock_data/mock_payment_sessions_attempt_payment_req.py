@@ -109,3 +109,55 @@ def mock_attempt_payment_req_with_3ds():
             },
         },
     }
+
+
+def mock_attempt_payment_req_with_authentication_parameters():
+    return {
+        "clientSecret": "ps_01FCTS1XMKH9FF43CAFA4CXT3P_secret_b83f2653-06d7-44a9-a548-5825e8186004",
+        "cardDetails": {
+            "number": "4444333322221111",
+            "expiryMonth": "10",
+            "expiryYear": "2024",
+            "cvc": "100",
+        },
+        "authenticationParameters": {
+            "eci": "05",
+            "authenticationValue": "AAABBEg0VhI0VniQEjRWAAAAAAA=",
+            "protocolVersion": "2.2.0",
+            "threeDsServerTransactionId": "8a880dc0-d2d2-4067-bcb1-b08d1690b26e",
+            "acsTransactionId": "13c701a3-5a88-4c45-89e9-ef65e50a8bf9",
+            "dsTransactionId": "f25084f0-5b16-4c0a-ae5d-b24808a95e4b",
+        },
+    }
+
+
+def mock_attempt_payment_req_with_wallet_network_token():
+    return {
+        "clientSecret": "ps_01FCTS1XMKH9FF43CAFA4CXT3P_secret_b83f2653-06d7-44a9-a548-5825e8186004",
+        "walletNetworkToken": {
+            "number": "4444333322221111",
+            "expiryMonth": "10",
+            "expiryYear": "2024",
+            "name": "Fox Mulder",
+            "walletType": "ApplePay",
+        },
+        "authenticationParameters": {
+            "eci": "07",
+            "authenticationValue": "AAABBEg0VhI0VniQEjRWAAAAAAA=",
+        },
+    }
+
+
+def mock_attempt_payment_req_with_wallet_network_token_without_eci():
+    return {
+        "clientSecret": "ps_01FCTS1XMKH9FF43CAFA4CXT3P_secret_b83f2653-06d7-44a9-a548-5825e8186004",
+        "walletNetworkToken": {
+            "number": "4444333322221111",
+            "expiryMonth": "10",
+            "expiryYear": "2024",
+            "walletType": "GooglePay",
+        },
+        "authenticationParameters": {
+            "authenticationValue": "AAABBEg0VhI0VniQEjRWAAAAAAA=",
+        },
+    }
