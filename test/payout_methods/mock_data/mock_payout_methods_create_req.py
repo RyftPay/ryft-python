@@ -18,6 +18,7 @@ def mock_create_payout_method_req_gbp_bank_acc():
                 "postalCode": "M1 1AA",
             },
         },
+        "default": True,
     }
 
 

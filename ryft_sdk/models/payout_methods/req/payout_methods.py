@@ -18,8 +18,10 @@ class CreatePayoutMethodRequest(TypedDict):
     currency: str
     country: str
     bankAccount: BankAccountRequest
+    default: NotRequired[bool]
 
 
 class UpdatePayoutMethodRequest(TypedDict):
     displayName: NotRequired[str]
     bankAccount: NotRequired[BankAccountRequest]
+    default: NotRequired[bool]
