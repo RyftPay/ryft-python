@@ -15,6 +15,7 @@ def mock_conversion_resp():
         },
         "rate": 1.247,
         "status": "Settled",
+        "triggerType": "Manual",
         "reason": "FX conversion",
         "estimatedSettlementDate": "2024-03-15",
         "settledTimestamp": 1470989600,

@@ -30,6 +30,7 @@ class PayoutMethod(TypedDict):
     createdTimestamp: int
     lastUpdatedTimestamp: int
     verification: PayoutMethodVerification
+    default: NotRequired[bool]
 
 
 class PayoutMethods(TypedDict):

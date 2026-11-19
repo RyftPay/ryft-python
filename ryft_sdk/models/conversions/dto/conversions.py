@@ -40,6 +40,7 @@ class Conversion(TypedDict):
     buy: ConversionBuy
     rate: NotRequired[float]
     status: str
+    triggerType: NotRequired[str]
     reason: NotRequired[str]
     estimatedSettlementDate: NotRequired[str]
     settledTimestamp: NotRequired[int]

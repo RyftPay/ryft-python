@@ -31,6 +31,7 @@ def mock_payout_method_resp():
             "status": "Verified",
             "nameOnAccount": "J Smith",
         },
+        "default": True,
     }
 
 
