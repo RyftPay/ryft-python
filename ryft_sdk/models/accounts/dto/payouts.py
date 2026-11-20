@@ -16,6 +16,20 @@ class PayoutMethod(TypedDict):
     bankAccount: PayoutBankAccount
 
 
+class FailureDetail(TypedDict):
+    code: str
+    description: str
+
+
+class PayoutFee(TypedDict):
+    amount: int
+
+
+class PayoutReversalDetail(TypedDict):
+    payoutReversed: bool
+    feeReversed: NotRequired[bool]
+
+
 class Payout(TypedDict):
     id: str
     paymentsTakeDateFrom: str
@@ -25,12 +39,16 @@ class Payout(TypedDict):
     status: str
     scheduleType: str
     payoutMethod: NotRequired[PayoutMethod]
+    # Deprecated: use failureDetail, which gives the specific reason the payout failed
     failureReason: NotRequired[str]
+    failureDetail: NotRequired[FailureDetail]
     scheme: NotRequired[str]
     createdTimestamp: int
     scheduledTimestamp: int
     completedTimestamp: NotRequired[int]
     metadata: NotRequired[dict[str, str]]
+    fee: NotRequired[PayoutFee]
+    reversalDetail: NotRequired[PayoutReversalDetail]
 
 
 class Payouts(TypedDict):

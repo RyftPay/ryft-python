@@ -22,6 +22,12 @@ def mock_payout_resp():
             },
         },
         "failureReason": "InvalidPayoutMethod",
+        "failureDetail": {
+            "code": "invalid_payout_method",
+            "description": "Bank account details are incorrect - please update your details and try again",
+        },
+        "fee": {"amount": 50},
+        "reversalDetail": {"payoutReversed": True, "feeReversed": True},
         "payoutCalculation": {
             "paymentsCapturedAmount": 10000,
             "paymentsRefundedAmount": 50,
