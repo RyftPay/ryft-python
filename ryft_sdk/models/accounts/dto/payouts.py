@@ -16,6 +16,12 @@ class PayoutMethod(TypedDict):
     bankAccount: PayoutBankAccount
 
 
+class FailureDetail(TypedDict):
+    # invalid_payout_method, invalid_account_address or unknown_error. New codes may be added.
+    code: str
+    description: str
+
+
 class Payout(TypedDict):
     id: str
     paymentsTakeDateFrom: str
@@ -25,7 +31,9 @@ class Payout(TypedDict):
     status: str
     scheduleType: str
     payoutMethod: NotRequired[PayoutMethod]
+    # Deprecated: use failureDetail, which gives the specific reason the payout failed
     failureReason: NotRequired[str]
+    failureDetail: NotRequired[FailureDetail]
     scheme: NotRequired[str]
     createdTimestamp: int
     scheduledTimestamp: int

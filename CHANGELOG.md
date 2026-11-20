@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.11.0
+
+This release includes the following:
+ - Adds `failureDetail` to `Payout` (payouts and account payouts), with a `code` (`invalid_payout_method`, `invalid_account_address` or `unknown_error`; new codes may be added) and a `description` explaining why the payout failed
+ - Deprecates `failureReason` on `Payout`. Use `failureDetail` instead
+
 ## 1.10.0
 
 This release includes the following:
