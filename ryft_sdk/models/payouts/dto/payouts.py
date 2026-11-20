@@ -17,9 +17,17 @@ class PayoutMethod(TypedDict):
 
 
 class FailureDetail(TypedDict):
-    # invalid_payout_method, invalid_account_address or unknown_error. New codes may be added.
     code: str
     description: str
+
+
+class PayoutFee(TypedDict):
+    amount: int
+
+
+class PayoutReversalDetail(TypedDict):
+    payoutReversed: bool
+    feeReversed: NotRequired[bool]
 
 
 class Payout(TypedDict):
@@ -39,6 +47,8 @@ class Payout(TypedDict):
     scheduledTimestamp: int
     completedTimestamp: NotRequired[int]
     metadata: NotRequired[dict[str, str]]
+    fee: NotRequired[PayoutFee]
+    reversalDetail: NotRequired[PayoutReversalDetail]
 
 
 class Payouts(TypedDict):
